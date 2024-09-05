@@ -1,0 +1,424 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+body {
+  background: rgb(74,78,78);
+  background: linear-gradient(0deg, rgb(39, 41, 41) 0%, rgb(4, 4, 4) 100%);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(2, 9, 93, 0.292);
+}
+
+/* Navigation Bar Styling */
+header {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+  width: 100%;
+  justify-content: center;
+}
+
+footer {
+  background-color: rgba(2, 9, 93, 0.292);
+}
+
+
+.name {
+  color:black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  display: inline;
+  padding-right: 500px;
+}
+
+#navigation {
+  display: flex;
+  justify-content: first baseline;
+  align-items: first baseline;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#navigation a {
+  color: black;
+  text-decoration: none;
+  padding: 14px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#navigation a:hover {
+  background-color: rgba(2, 9, 93, 0.292);
+  transform: scale(1.15);
+}
+
+/* Main Content Styling */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(2, 9, 93, 0.292);
+}
+
+/* Profile Container Styling */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  width: 80%;
+  max-width: 1000px;
+  max-height: fit-content;
+  transition: transform 1.5s ease;
+}
+
+.profile-container:hover {
+  transform: scale(1.20);
+  transition-duration: 1s;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-details {
+  text-align: left;
+}
+
+.profile-details h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.profile-details hr {
+  width: 100%;
+  border: 1px solid wh;
+  margin-bottom: 10px;
+}
+
+.profile-details p {
+  font-size: 16px;
+  color: white;
+}
+
+/* Resume Button Styling */
+.resume-button {
+    position: absolute;
+    padding-top: 250px;
+}
+
+.resume-button a {
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button a:hover {
+  background-color: #45a049;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .profile-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .profile-image {
+      margin-bottom: 15px;
+  }
+
+  .profile-details {
+      text-align: center;
+  }
+
+  #navigation {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #navigation a {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 20px;
+  }
+
+  #navigation a:hover {
+      transform: translateX(10px);
+  }
+}
+
+@media (max-width: 480px) {
+  #navigation a {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+
+  .profile-details h1 {
+      font-size: 20px;
+  }
+
+  .profile-details p {
+      font-size: 14px;
+  }
+}
+
+/* Card Container Styling */
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#projectdetails {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: rgba(2, 9, 93, 0.292);
+}
+
+/* Card Styling */
+.card {
+  position: relative;
+  width: 30%;
+  margin: 15px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+
+.card img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition-duration: 1s;
+}
+
+/* Overlay Styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px;
+}
+
+.overlay a img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .card {
+      width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      width: 100%;
+  }
+
+  .overlay p {
+      font-size: 16px;
+  }
+}
+
+
+/* Main Content Styling */
+main2 {
+  padding: 50px;
+  flex: 1;
+  background-color: rgba(2, 9, 93, 0.292);
+}
+
+/* Section Styling */
+.education-section, .skills-section, .workshops-section {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
+  max-width: 1000px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 20px auto; /* Center align the sections */
+  text-align: left; /* Align content to the start */
+  position: relative; /* For positioning additional content */
+  color: white; /* Text color to contrast with background */
+}
+
+
+/* Summary Styling */
+.summary {
+  margin-bottom: 10px;
+}
+
+/* Additional Content Styling */
+.additional-content {
+  display: none; /* Hide additional content by default */
+  margin-top: 10px;
+}
+
+/* Show additional content on hover */
+.education-section:hover .additional-content,
+.skills-section:hover .additional-content,
+.workshops-section:hover .additional-content {
+  display: block;
+}
+
+.workshops-section .additional-content .certi {
+  background-color: black;
+  color: white; /* Optional: Set text color to white for better contrast */
+  padding: 10px; /* Optional: Add padding for better spacing */
+  text-decoration: none; /* Remove underline from the link */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.workshops-section .additional-content .certi:hover {
+  background-color: green;
+  color: white; /* Keep text color white on hover */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .additional-content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .additional-content {
+    font-size: 14px;
+  }
+}
+
+
+/* Contact Form Container Styling */
+.contact-form-container {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.contact-form-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  padding-right: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}
