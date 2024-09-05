@@ -138,19 +138,25 @@ main {
 }
 
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .profile-container {
-      flex-direction: column;
-      text-align: center;
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  #navigation a {
+      display: none;
   }
 
-  .profile-image {
-      margin-bottom: 15px;
+  #menu-icon {
+      display: block;
   }
 
-  .profile-details {
+  /* Show menu items when toggled */
+  #navigation.active a {
+      display: block;
+      background-color: #333;
       text-align: center;
+      padding: 10px;
+      width: 100%;
+      margin: 0;
   }
 
   #navigation {
@@ -158,32 +164,11 @@ main {
       align-items: flex-start;
   }
 
-  #navigation a {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 10px 20px;
-  }
-
-  #navigation a:hover {
-      transform: translateX(10px);
+  .name {
+      margin-bottom: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  #navigation a {
-      padding: 8px 16px;
-      font-size: 14px;
-  }
-
-  .profile-details h1 {
-      font-size: 20px;
-  }
-
-  .profile-details p {
-      font-size: 14px;
-  }
-}
 
 /* Card Container Styling */
 .card-container {
