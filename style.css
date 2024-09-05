@@ -138,7 +138,7 @@ main {
 }
 
 
-/* Responsive styling */
+/* Styling for screens smaller than 768px (Mobile view) */
 @media screen and (max-width: 768px) {
   #navigation a {
       display: none;
@@ -168,53 +168,19 @@ main {
   }
 }
 
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .profile-container {
-      flex-direction: column;
-      text-align: center;
+/* For larger screens (Laptop/Desktops), hide the menu icon */
+@media screen and (min-width: 769px) {
+  #menu-icon {
+      display: none;
   }
 
-  .profile-image {
-      margin-bottom: 15px;
-  }
-
-  .profile-details {
-      text-align: center;
-  }
-
-  #navigation {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
+  /* Ensure the navigation links are visible */
   #navigation a {
       display: block;
-      width: 100%;
-      text-align: left;
-      padding: 10px 20px;
-  }
-
-  #navigation a:hover {
-      transform: translateX(10px);
   }
 }
 
-@media (max-width: 480px) {
-  #navigation a {
-      padding: 8px 16px;
-      font-size: 14px;
-  }
 
-  .profile-details h1 {
-      font-size: 20px;
-  }
-
-  .profile-details p {
-      font-size: 14px;
-  }
-}
 
 /* Card Container Styling */
 .card-container {
