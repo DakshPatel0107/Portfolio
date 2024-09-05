@@ -139,19 +139,20 @@ main {
 
 
 /* Styling for screens smaller than 768px (Mobile view) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1025px) {
   #navigation a {
       display: none;
   }
 
   #menu-icon {
-      display: block;
+    
+    display: block;
   }
 
   /* Show menu items when toggled */
   #navigation.active a {
       display: block;
-      background-color: #333;
+      background-color: white;
       text-align: center;
       padding: 10px;
       width: 100%;
@@ -165,6 +166,26 @@ main {
 
   .name {
       margin-bottom: 10px;
+      padding-right: 50px;
+  }
+
+  /* Move the resume button below the profile container */
+  .resume-button {
+      position: relative;
+      margin-top: 20px;
+      padding-top: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .profile-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile-image img {
+      margin-bottom: 20px;
   }
 }
 
@@ -194,7 +215,7 @@ main {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+
   background-color: rgba(2, 9, 93, 0.292);
 }
 
@@ -257,13 +278,13 @@ main {
 }
 
 /* Responsive Layout */
-@media (max-width: 768px) {
-  .card {
-      width: 45%;
+@media screen and (max-width: 1025px) {
+  .card-container {
+      display: inline;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 769px) {
   .card {
       width: 100%;
   }
@@ -272,6 +293,7 @@ main {
       font-size: 16px;
   }
 }
+
 
 
 /* Main Content Styling */
@@ -329,13 +351,13 @@ main2 {
 }
 
 /* Responsive Layout */
-@media (max-width: 768px) {
+@media screen and (max-width: 1025px) {
   .additional-content {
     font-size: 16px;
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 769px) {
   .additional-content {
     font-size: 14px;
   }
@@ -400,9 +422,9 @@ button:hover {
 }
 
 /* Responsive Layout */
-@media (max-width: 768px) {
+@media screen and  (max-width: 1025px) {
   .contact-form-container {
-    padding: 15px;
+    margin: 15px;
   }
 
   button {
@@ -410,7 +432,7 @@ button:hover {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 769px) {
   .contact-form-container {
     padding: 10px;
   }
