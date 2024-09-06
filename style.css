@@ -284,13 +284,46 @@ main {
   }
 }
 
-@media (max-width: 769px) {
+/* Responsive Layout for Mobile View */
+@media screen and (max-width: 769px) {
+  /* Make the card take full width */
   .card {
-      width: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  /* Adjust the card container for mobile view */
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+    padding: 10px;
   }
 
+  /* Make overlay show below the card */
+  .overlay {
+    position: static; /* Remove absolute positioning */
+    width: 100%;
+    height: auto;
+    opacity: 1; /* Always visible in mobile view */
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 10px; /* Space between the card and overlay */
+  }
+
+  /* Center the overlay content and adjust padding */
   .overlay p {
-      font-size: 16px;
+    font-size: 16px; /* Larger font for readability */
+    padding: 10px;
+  }
+
+  /* Ensure links/icons inside the overlay are aligned properly */
+  .overlay a img {
+    margin-top: 10px;
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Ensure the card no longer scales on hover in mobile view */
+  .card:hover {
+    transform: none;
   }
 }
 
@@ -305,50 +338,71 @@ main2 {
 
 /* Section Styling */
 .education-section, .skills-section, .workshops-section {
-  background-color: #333;
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
   display: inline-block;
   width: 100%;
   max-width: 1000px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
   margin: 20px auto; /* Center align the sections */
   text-align: left; /* Align content to the start */
   position: relative; /* For positioning additional content */
-  color: white; /* Text color to contrast with background */
+  color: black; /* Text color to contrast with background */
 }
 
-
-/* Summary Styling */
-.summary {
-  margin-bottom: 10px;
-}
-
-/* Additional Content Styling */
+/* Hide additional content by default */
 .additional-content {
-  display: none; /* Hide additional content by default */
+  display: none;
   margin-top: 10px;
 }
 
-/* Show additional content on hover */
-.education-section:hover .additional-content,
-.skills-section:hover .additional-content,
-.workshops-section:hover .additional-content {
+/* Arrow Image Styling */
+.toggle-arrow {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+  margin-top: 10px;
+}
+
+/* Rotate arrow */
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Additional Content Hidden by Default */
+.additional-content {
+  display: none;
+}
+
+/* Show Content When Active */
+.active {
   display: block;
 }
 
-.workshops-section .additional-content .certi {
+/* Optional: Certificate link styling */
+.certi {
   background-color: black;
-  color: white; /* Optional: Set text color to white for better contrast */
-  padding: 10px; /* Optional: Add padding for better spacing */
+  color: white; /* Set text color to white for better contrast */
+  padding: 10px; /* Add padding for better spacing */
   text-decoration: none; /* Remove underline from the link */
-  border-radius: 5px; /* Optional: Add rounded corners */
+  border-radius: 5px; /* Add rounded corners */
 }
 
-.workshops-section .additional-content .certi:hover {
+.certi:hover {
   background-color: green;
   color: white; /* Keep text color white on hover */
 }
+
+.title {
+  display: flex; /* Use flexbox to align the arrow and text */
+  justify-content: space-between; /* Push the arrow to the right */
+  align-items: center; /* Align arrow vertically with the text */
+  margin: 0; /* Ensure no extra margin */
+}
+
 
 /* Responsive Layout */
 @media screen and (max-width: 1025px) {
@@ -366,13 +420,13 @@ main2 {
 
 /* Contact Form Container Styling */
 .contact-form-container {
-  background-color: #333;
+  background-color: white;
   padding: 30px;
   border-radius: 8px;
   width: 100%;
   max-width: 600px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  color: white;
+  color: black;
 }
 
 .contact-form-container h1 {
@@ -396,8 +450,8 @@ main2 {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #444;
-  background-color: #222;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .form-group textarea {
