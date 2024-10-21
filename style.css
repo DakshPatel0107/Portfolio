@@ -337,7 +337,7 @@ main2 {
 }
 
 /* Section Styling */
-.education-section, .skills-section, .workshops-section {
+.education-section, .skills-section, .workshops-section , .internship-section{
   background-color: white;
   padding: 20px;
   border-radius: 8px;
